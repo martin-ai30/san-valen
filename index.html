@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>💖 San Valentín 💖</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffe6ec, #fff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      max-width: 350px;
+      width: 90%;
+    }
+
+    .emoji {
+      font-size: 70px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      position: relative;
+    }
+
+    button {
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    #yes:hover {
+      transform: scale(1.1);
+    }
+
+    #no {
+      background: #e0e0e0;
+      color: #333;
+      position: relative;
+    }
+
+    .hint {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #777;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="emoji">😺💖</div>
+    <h1>Juliette,<br>¿serías mi San Valentín?</h1>
+
+    <div class="buttons">
+      <button id="no">No</button>
+      <button id="yes">Sí</button>
+    </div>
+
+    <div class="hint">“No” parece un poco tímido 😅</div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * 120 - 60;
+      const y = Math.random() * 120 - 60;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    yesBtn.addEventListener("click", () => {
+      document.body.innerHTML = `
+        <div style="
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          height:100vh;
+          font-family:'Segoe UI',sans-serif;
+          background:linear-gradient(135deg,#ffb3c6,#fff);
+          text-align:center;
+        ">
+          <div>
+            <h1 style="font-size:40px;">💘 ¡Sabía que dirías que sí! 💘</h1>
+            <p style="font-size:22px;">Hiciste mi día más especial 🥰</p>
+          </div>
+        </div>
+      `;
+    });
+  </script>
+
+</body>
+</html>
